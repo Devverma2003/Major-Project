@@ -49,6 +49,7 @@ body{
     background-size: contain;
     background-position: center;
     height: 80vh;
+    
     mix-blend-mode: color;
     display: flex;
     justify-self: center;
