@@ -1,36 +1,46 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import './Cards.css'
 
 const cardData = [
   {
     title: 'Wildlife',
-    image: 'https://images.unsplash.com/photo-1596482261333-a273e56bfa76?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDMwfHx8ZW58MHx8fHx8',
+    image:
+      'https://images.unsplash.com/photo-1596482261333-a273e56bfa76?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDMwfHx8ZW58MHx8fHx8',
   },
   {
     title: 'Walking',
-    image: 'https://media.istockphoto.com/id/1294276254/photo/a-beautiful-family-walks-together-on-a-tropical-paradise-beach-in-the-maldives.webp?a=1&b=1&s=612x612&w=0&k=20&c=jktlBR5KhuoyF1ovtEFl1_bb4TTn_WVbXCzfuYPILAU=',
+    image:
+      'https://media.istockphoto.com/id/1294276254/photo/a-beautiful-family-walks-together-on-a-tropical-paradise-beach-in-the-maldives.webp?a=1&b=1&s=612x612&w=0&k=20&c=jktlBR5KhuoyF1ovtEFl1_bb4TTn_WVbXCzfuYPILAU=',
   },
   {
     title: 'Cruises',
-    image: 'https://plus.unsplash.com/premium_photo-1663050763676-82ff02c5e02c?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y3J1aXNlc3xlbnwwfHwwfHx8MA%3D%3D',
+    image:
+      'https://plus.unsplash.com/premium_photo-1663050763676-82ff02c5e02c?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y3J1aXNlc3xlbnwwfHwwfHx8MA%3D%3D',
   },
   {
     title: 'Hiking',
-    image: 'https://plus.unsplash.com/premium_photo-1677002240252-af3f88114efc?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aGlraW5nfGVufDB8fDB8fHww',
+    image:
+      'https://plus.unsplash.com/premium_photo-1677002240252-af3f88114efc?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aGlraW5nfGVufDB8fDB8fHww',
   },
 ]
 
 const Cards = () => {
   return (
-    <div className="w-full mt-20 px-6">
-      <h2 className="txt text-3xl italic text-center">Wonderful Places For You</h2>
-      <h3 className="txt font-bold text-4xl text-center pt-1">Tour Categories</h3>
+    <div className="w-full my-32 px-6">
+      <h2 className="text-gray-600 text-xl italic text-center">Wonderful Places For You</h2>
+      <h3 className="text-gray-800 font-bold text-3xl text-center pt-1">Tour Categories</h3>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-10">
         {cardData.map((card, index) => (
-          <div
+          <motion.div
             key={index}
             className="flex flex-col rounded-xl bg-white text-gray-700 shadow-md"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.4, ease: 'easeOut' }}
+            viewport={{ once: true }}
           >
             <div className="h-40 overflow-hidden rounded-t-xl">
               <img
@@ -47,12 +57,9 @@ const Cards = () => {
                 Explore the best of {card.title.toLowerCase()} tours and destinations.
               </p>
             </div>
-          
-          </div>
+          </motion.div>
         ))}
       </div>
-
-      
     </div>
   )
 }
