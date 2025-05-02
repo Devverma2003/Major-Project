@@ -1,0 +1,13 @@
+.hero{
+    height:80vh;
+}
+.form{
+    border-color: rgb(27, 140, 180);
+}
+.frmbtn{
+    
+    background-color: rgb(52, 148, 183);
+}
+.frmbtn:hover{
+    background-color: rgb(14, 78, 101);
+}
