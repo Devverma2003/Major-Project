@@ -5,6 +5,7 @@ import Cards from '../Components/Cards/Cards'
 import PopularDestinations from '../Components/PopularDest/PopDest'
 import PlanTripSection from '../Components/PlanTrip/Trip'
 import Footer from '../Components/Footer'
+import Aboutpage from './Aboutpage'
 
 
 const Homepage = () => {
@@ -12,6 +13,7 @@ const Homepage = () => {
     <div>
     <Navbar/>
     <Hero/>
+    <Aboutpage/>
     <Cards/>
     <PopularDestinations/>
     <PlanTripSection/>
