@@ -7,6 +7,7 @@ import PlanTripSection from '../Components/PlanTrip/Trip'
 import Footer from '../Components/Footer'
 
 
+
 const Homepage = () => {
   return (
     <div>

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./BookNow.css";
+import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/Footer";
 
 const BookNow = () => {
   const location = useLocation();
@@ -99,7 +101,8 @@ const BookNow = () => {
     }
   };
 
-  return (
+  return (<>
+    <Navbar/>
     <div className=" mybody ">
     <div className="container max-w-6xl mx-auto bg-white rounded-xl shadow-lg p-4 sm:p-6 flex flex-col md:flex-row">
       {/* Left Section - Image and Details */}
@@ -196,15 +199,17 @@ const BookNow = () => {
           </div>
 
           <button
-            type="submit"
-            className="w-full bg-cyan-400 text-white py-2 rounded hover:bg-cyan-600"
-          >
-            Confirm Booking
-          </button>
+  type="submit"
+  className="w-full bg-cyan-400 text-white py-2 rounded hover:bg-cyan-600 flex justify-center items-center"
+>
+  Confirm Booking
+</button>
         </form>
       </div>
     </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 
