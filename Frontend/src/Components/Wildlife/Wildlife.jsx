@@ -2,6 +2,8 @@ import React from 'react'
 import './Wildlife.css'
 import Wildlifecards from './WildlifeCards'
 import Navbar from '../Navbar/Navbar'
+import WildlifeActivities from './Exploreactivities'
+import Footer from '../Footer'
 
 
 const Wildlife = () => {
@@ -17,11 +19,12 @@ const Wildlife = () => {
       Discover some of the world’s most stunning wildlife destinations, perfect for nature lovers and adventure seekers. From lush jungles to open savannahs, these escapes offer a chance to witness rare animals in their natural habitats—up close and unforgettable.
 </p>
 <Wildlifecards/>
-<div >
-
 </div>
-    </div>
+<div className='h-screen w-full mt-80'>
 
+<WildlifeActivities/>
+</div>
+<Footer/>
     </>
   )
 }

@@ -3,6 +3,9 @@ import { Routes, Route } from "react-router-dom";
 import Homepage from "./Pages/Homepage";
 import Destination from './Pages/Destination/Destination';
 import BookNow from "./pages/Destination/BookNow";
+import Aboutpage from './Pages/Aboutpage';
+import Categories from './Pages/Categories/Categories';
+import Wildlife from './Components/Wildlife/Wildlife';
 
 function App() {
   return (
@@ -10,6 +13,9 @@ function App() {
       <Route path="/" element={<Homepage />} />
       <Route path="/destination" element={<Destination />} />
       <Route path="/book-now" element={<BookNow />} />
+      <Route path="/Aboutpage" element={<Aboutpage />} />
+      <Route path="/Categories" element={<Categories />} />
+      <Route path="/Categories/Wildlife" element={<Wildlife />} />
     </Routes>
   );
 }

@@ -4,7 +4,7 @@ import { FaSuitcase, FaUserTie } from "react-icons/fa";
 
 const PlanTripSection = () => {
   return (
-    <section className=" px-6 py-16">
+    <section className="px-6 py-16">
       <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-between gap-10">
         {/* Left Images */}
         <motion.div
@@ -60,7 +60,7 @@ const PlanTripSection = () => {
 
           <div className="flex flex-col gap-4 mb-6">
             <div className="flex items-start gap-4">
-              <button className=" text-white p-3 rounded-full">
+              <button className="text-white p-3 rounded-full">
                 <FaSuitcase size={20} />
               </button>
               <div>
@@ -85,12 +85,12 @@ const PlanTripSection = () => {
             </div>
           </div>
 
-          <button
+          <motion.button
             whileHover={{ scale: 1.05 }}
-            className=" text-white px-6 py-3 rounded-full font-medium transition"
+            className="text-white px-6 py-3 rounded-full font-medium transition"
           >
             Learn More →
-          </button>
+          </motion.button>
         </motion.div>
 
         {/* Right Traveler Image */}
@@ -100,11 +100,7 @@ const PlanTripSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <img
-            src="guide.png"
-            alt="Traveler"
-            className="w-52"
-          />
+          <img src="guide.png" alt="Traveler" className="w-52" />
         </motion.div>
       </div>
     </section>

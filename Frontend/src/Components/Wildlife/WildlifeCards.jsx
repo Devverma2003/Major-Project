@@ -5,20 +5,19 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ActivityList from "./Activities";
 
-
 const Wildlifecards = () => {
   const navigate = useNavigate();
 
   const cardData = [
     {
       image: "wild1.avif",
-      title: "Jim Corbett National Park ",
+      title: "Jim Corbett National Park",
       description: "Uttarakhand",
       price: "₹2000/person",
     },
     {
       image: "wild2.JPG",
-      title: "Kaziranga National Park ",
+      title: "Kaziranga National Park",
       description: "Assam",
       price: "₹2500/person",
     },
@@ -31,12 +30,12 @@ const Wildlifecards = () => {
     {
       image: "wild4.avif",
       title: "Gir National Park",
-      description: "Gujrat",
+      description: "Gujarat",
       price: "₹2000/person",
     },
     {
       image: "wild5.webp",
-      title: "Hemis National Park ",
+      title: "Hemis National Park",
       description: "Ladakh",
       price: "₹3000/person",
     },
@@ -64,21 +63,27 @@ const Wildlifecards = () => {
             <div key={index} className="px-3">
               <div className="bg-white rounded-3xl overflow-hidden shadow-lg max-w-[350px] mx-auto">
                 <img
-                  src={card.image}
+                  src={`/${card.image}`} // ✅ Fixed image path
                   alt={card.title}
                   className="h-56 w-full object-cover"
                 />
                 <div className="p-5">
-                  <h3 className="text-xl font-semibold text-gray-900">{card.title}</h3>
+                  <h3 className="text-xl font-semibold text-gray-900">
+                    {card.title}
+                  </h3>
                   <p className="text-gray-600">{card.description}</p>
                   <p className="text-black font-bold">{card.price}</p>
 
                   {/* 🧭 Activity Icons */}
-                 <ActivityList/>
+                  <ActivityList />
 
                   <div className="mt-4 flex justify-between items-center text-sm text-gray-600">
                     <span className="flex items-center gap-1">
-                      <img src="/clock.png" className="w-4 h-4" alt="duration" />
+                      <img
+                        src="/clock.png" // ✅ Make sure this file exists in /public
+                        className="w-4 h-4"
+                        alt="duration"
+                      />
                       5 days
                     </span>
                     <button
@@ -92,7 +97,7 @@ const Wildlifecards = () => {
                           },
                         })
                       }
-                      className="border px-4 py-1 rounded-lg text-sm hover:bg-cyan-400 transition-colors duration-300"
+                      className="border px-4 py-1 rounded-lg text-sm  transition-colors duration-300"
                     >
                       Book Now!
                     </button>
