@@ -1,288 +1,195 @@
 import React, { useState } from "react";
-import { useEffect } from "react";
-import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar/Navbar";
-
-const NewsCard = ({ title, content, fullContent, img }) => {
-  const [expanded, setExpanded] = useState(false);
-
-  return (
-    <div className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col transition-transform transform hover:scale-105 hover:shadow-2xl hover:border-blue-300">
-      <img
-        src={img}
-        alt="News"
-        className="w-full h-48 object-cover "
-      />
-      <div className="p-5 flex flex-col flex-1">
-        <h3 className="font-semibold text-xl mb-2">{title}</h3>
-        <p className="text-gray-600 mb-4 text-sm">
-          {expanded ? fullContent : content}
-        </p>
-        <button
-          onClick={() => setExpanded(!expanded)}
-          className="text-white bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 mt-auto self-start transition-all duration-300"
-        >
-          {expanded ? "Show Less" : "Read More"}
-        </button>
-      </div>
-    </div>
-  );
-};
+import Footer from "../Components/Footer";
 
 const Aboutpage = () => {
   const testimonials = [
     {
       name: "Angelina Rose",
       role: "Traveler",
-      quote:
-        "Solar panels adorn the roof, harnessing renewable energy to power the home and even feed excess electricity back into the grid.",
-      image:
-        "https://img.freepik.com/free-photo/stylish-girl-posing-with-travel-equipment-red-wall_1157-34334.jpg",
+      quote: "Solar panels adorn the roof, harnessing renewable energy to power the home and even feed excess electricity back into the grid.",
+      image: "https://img.freepik.com/free-photo/stylish-girl-posing-with-travel-equipment-red-wall_1157-34334.jpg",
       profileTag: "Eco Enthusiast",
       rating: 5,
     },
     {
       name: "Franklin Smith",
       role: "Traveler",
-      quote:
-        "A home that perfectly blends sustainability with luxury until discovered Ecoland Residence.",
-      image:
-        "https://img.freepik.com/free-photo/brunette-man-traveler-white-tee-sunglasses-smiles-near-airport_197531-23099.jpg",
+      quote: "A home that perfectly blends sustainability with luxury until discovered Ecoland Residence.",
+      image: "https://img.freepik.com/free-photo/brunette-man-traveler-white-tee-sunglasses-smiles-near-airport_197531-23099.jpg",
       profileTag: "Adventure Seeker",
       rating: 4,
     },
     {
       name: "Maria Doe",
       role: "Traveler",
-      quote:
-        "The home boasts sleek, contemporary architecture with clean lines and expansive windows.",
-      image:
-        "https://img.freepik.com/free-photo/front-view-young-female-red-shirt-with-hat-light-pink-background-human-color-woman_140725-70856.jpg",
+      quote: "The home boasts sleek, contemporary architecture with clean lines and expansive windows.",
+      image: "https://img.freepik.com/free-photo/front-view-young-female-red-shirt-with-hat-light-pink-background-human-color-woman_140725-70856.jpg",
       profileTag: "Modern Architect",
       rating: 5,
     },
     {
-      name: "Tom Cruise",
-      role: "Traveler",
-      quote:
-        "Solar panels adorn the roof, harnessing renewable energy to power the home and even feed excess electricity back into the grid.",
-      image:
-        "https://img.freepik.com/free-photo/confident-young-handsome-curly-traveler-man-wearing-hat-taking-selfie-putting-hand-hat-with-suitcase-isolated-blue-space_141793-92032.jpg",
-      profileTag: "Music Lover",
-      rating: 4,
-    },
-    {
-      name: "Angellina Jolie",
-      role: "Traveler",
-      quote:
-        "A home that perfectly blends sustainability with luxury until discovered Ecoland Residence.",
-      image:
-        "https://img.freepik.com/free-photo/happy-young-woman-sitting-rock-with-holding-binoculars_23-2147842487.jpg",
-      profileTag: "Sustainable Design Advocate",
-      rating: 3,
-    },
-    {
-      name: "Edward Smith",
-      role: "Traveler",
-      quote:
-        "The home boasts sleek, contemporary architecture with clean lines and expansive windows.",
-      image:
-        "https://img.freepik.com/premium-photo/where-i-am-handsome-bearded-man-casual-wear-eyeglasses-pulling-his-luggage-holding-smartphone-while-walking-through-city-street-travel-concept-lifestyle_386167-2077.jpg",
-      profileTag: "Architectural Visionary",
-      rating: 5,
-    },
-    {
-      name: "Justin Bieber",
-      role: "Traveler",
-      quote:
-        "Solar panels adorn the roof, harnessing renewable energy to power the home and even feed excess electricity back into the grid.",
-      image:
-        "https://img.freepik.com/free-photo/handsome-male-traveler-standing-near-sea-holding-map-hand-looking-away_23-2148148665.jpg",
-      profileTag: "Global Traveler",
-      rating: 4,
-    },
-    {
-      name: "Sarah Connor",
-      role: "Traveler",
-      quote:
-        "A home that perfectly blends sustainability with luxury until discovered Ecoland Residence.",
-      image:
-        "https://img.freepik.com/free-photo/woman-looking-her-plane-tickets_23-2148521290.jpg",
+      name: "John Doe",
+      role: "Business Owner",
+      quote: "A sustainable approach to design has made my home more energy-efficient while still maintaining a modern aesthetic.",
+      image: "https://img.freepik.com/free-photo/portrait-smiling-young-businessman-office_1157-14285.jpg",
       profileTag: "Sustainability Advocate",
+      rating: 4,
+    },
+    {
+      name: "Sophia Lee",
+      role: "Traveler",
+      quote: "The house not only blends perfectly with the environment but also offers top-notch luxury living.",
+      image: "https://img.freepik.com/free-photo/portrait-beautiful-young-woman-hat_1157-12475.jpg",
+      profileTag: "Nature Lover",
       rating: 5,
     },
     {
-      name: "Natalie Portman",
-      role: "Traveler",
-      quote:
-        "The home boasts sleek, contemporary architecture with clean lines and expansive windows.",
-      image:
-        "https://img.freepik.com/free-photo/female-tourists-spread-their-arms-held-their-wings_1150-7429.jpg",
-      profileTag: "Luxury Enthusiast",
+      name: "Liam Johnson",
+      role: "Photographer",
+      quote: "Every corner of this space inspires creativity – the blend of modern design with nature’s beauty is simply mesmerizing.",
+      image: "https://img.freepik.com/free-photo/smiling-man-photographer-posing-outdoors_1157-23146.jpg",
+      profileTag: "Creative Mind",
       rating: 4,
     },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const totalPages = Math.ceil(testimonials.length / 3);
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 3) % testimonials.length);
+  };
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 3 + testimonials.length) % testimonials.length);
+  };
 
-  // Autoplay functionality
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) =>
-        prev >= testimonials.length - 3 ? 0 : prev + 3
-      );
-    }, 3000); // Change every 3 seconds
-
-    return () => clearInterval(interval); // Cleanup
-  }, [testimonials.length]);
+  const visibleTestimonials = testimonials.slice(currentIndex, currentIndex + 3);
 
   return (
-    <div className='transition-all duration-700 ease-in-out"'>
+    <div className="transition-all duration-700 ease-in-out">
       <Navbar />
-      <div className="min-h-screen bg-gradient-to-b from-blue-100 via-blue-200 to-blue-100 text-gray-800">
-        {/* Tagline above Clients Section */}
-        <section className="py-16 text-center">
-          <p className="italic text-xl mb-4">
-            Your satisfaction is our top priority!
-          </p>
-          <h2 className="text-3xl font-bold mb-6 flex justify-center items-center">
-            <i className="fas fa-plane-departure mr-2 text-blue-500"></i> What
-            Clients Say About Us
-          </h2>
-          <div className="border-t-4 border-blue-500 w-24 mx-auto mb-10" />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
-            {testimonials
-              .slice(currentIndex, currentIndex + 3)
-              .map((testimonial, index) => (
-                <div
-                  key={testimonial.name}
-                  className={`bg-white rounded-lg p-4 shadow-md max-w-sm mx-auto relative ${
-                    index % 2 === 0 ? "min-h-[240px]" : "min-h-[280px]"
-                  } transition-transform transform hover:scale-105 hover:shadow-xl hover:border-blue-300`}
-                >
-                  <div className="flex justify-between items-start">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="w-16 h-16 rounded-full object-cover transition-all duration-300 hover:scale-110"
-                    />
-                    <div className="flex">
-                      {[...Array(5)].map((_, i) => (
-                        <svg
-                          key={i}
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill={i < testimonial.rating ? "yellow" : "gray"}
-                          viewBox="0 0 20 20"
-                          className="w-4 h-4 ml-1"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M10 15.27l5.18 3.73-1.64-6.91 5.06-4.73-6.91-.59L10 1 7.35 7.77 1.44 8.36l5.06 4.73-1.64 6.91L10 15.27z"
-                          />
-                        </svg>
-                      ))}
-                    </div>
-                  </div>
-                  <h3 className="font-semibold text-lg mt-4">
-                    {testimonial.name}
-                  </h3>
-                  <span className="text-blue-500 text-sm">
-                    {testimonial.role}
-                  </span>
-                  <p className="text-gray-500 mt-1 italic">
-                    {testimonial.profileTag}
-                  </p>
-                  <p className="italic text-gray-600 mt-2">
-                    “{testimonial.quote}”
-                  </p>
-                  <div className="absolute bottom-0 left-0 right-0 h-4 bg-gradient-to-r from-transparent to-blue-200" />
-                </div>
-              ))}
-          </div>
+      <div className="bg-blue-50 text-black">
 
-          <div className="flex justify-center gap-2 mt-4">
-            {Array.from({ length: totalPages }).map((_, index) => (
-              <div
-                key={index}
-                onClick={() => setCurrentIndex(index * 3)}
-                className={`w-3 h-3 rounded-full cursor-pointer ${
-                  currentIndex === index * 3 ? "bg-blue-600" : "bg-gray-300"
+      <section
+  className="relative h-[100vh] bg-cover bg-center flex items-center justify-center mt-16"
+  style={{ backgroundImage: 'url("https://img.freepik.com/free-photo/tropical-beach-paradise-samoa_53876-138039.jpg?t=st=1746518992~exp=1746522592~hmac=b6f7be43eec2d6d30af5994b0fdc1a7556d2777f66a0fec2b01693a77b334fc1&w=1480")' }}
+>
+  <div className="text-center">
+    <h1 className="text-9xl font-bold text-white mb-4 font-serif">About Us</h1>
+  </div>
+</section>
+
+
+{/* Our Popular Tour Plans Section */}
+<section className="py-20 px-6 md:px-16 bg-blue-50 bg-cover bg-opacity-90"
+         style={{ backgroundImage: 'url(https://www.example.com/shell1.png)', backgroundRepeat: 'repeat', backgroundSize: 'auto 40px' }}>
+  <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-16">
+
+    {/* Left: Polaroid-style images */}
+    <div className="relative w-full lg:w-1/2 flex justify-center">
+      <div className="absolute top-0 left-10 transform -rotate-6 shadow-lg z-10">
+        <img
+          src="https://images.unsplash.com/photo-1590580672645-68ade56b8a21?q=80&w=2040&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Tour Plan 1"
+          className="w-56 h-72 object-cover rounded-lg border-4 border-white"
+        />
+      </div>
+      <div className=" left-28 transform rotate-3 shadow-xl z-0">
+        <img
+          src="https://images.unsplash.com/photo-1623317977555-5be922ef3f5f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Tour Plan 2"
+          className="w-56 h-72 object-cover rounded-lg border-4 border-white"
+        />
+      </div>
+      <div className="invisible lg:visible w-0 h-0"> {/* Spacer for layout balance on small screens */}</div>
+    </div>
+
+    {/* Right: Text and Circular Stats */}
+    <div className="w-full lg:w-1/2 text-center lg:text-left">
+      <h2 className="text-3xl md:text-4xl font-bold text-blue-800 mb-4">Our Popular Tour Plans</h2>
+      <p className="text-gray-700 text-lg mb-8">Explore the most loved tour categories, chosen by thousands of happy travelers around the world.</p>
+
+      <div className="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-6">
+        <div className="flex flex-col items-center">
+          <div className="w-24 h-24 rounded-full bg-white border-4 border-blue-400 flex items-center justify-center text-blue-700 font-bold text-xl shadow-md">
+            78%
+          </div>
+          <p className="mt-2 text-sm text-gray-600">Vacation</p>
+        </div>
+        <div className="flex flex-col items-center">
+          <div className="w-24 h-24 rounded-full bg-white border-4 border-pink-400 flex items-center justify-center text-pink-600 font-bold text-xl shadow-md">
+            55%
+          </div>
+          <p className="mt-2 text-sm text-gray-600">Honeymoon</p>
+        </div>
+        <div className="flex flex-col items-center">
+          <div className="w-24 h-24 rounded-full bg-white border-4 border-purple-400 flex items-center justify-center text-purple-600 font-bold text-xl shadow-md">
+            30%
+          </div>
+          <p className="mt-2 text-sm text-gray-600">Medical Visits</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>  
+    
+   
+
+      {/* Testimonials Carousel */}
+<section className="py-20 bg-blue-50 text-center">
+  <h2 className="text-4xl font-extrabold text-blue-800 mb-10">What Our Clients Say</h2>
+
+  <div className="relative max-w-7xl mx-auto px-4">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {visibleTestimonials.map((testimonial, index) => (
+        <div
+          key={index}
+          className="bg-white p-4 rounded-lg border border-blue-200 shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105"
+        >
+          <div className="flex justify-center mb-4">
+            <img
+              src={testimonial.image}
+              alt={testimonial.name}
+              className="w-16 h-16 rounded-full object-cover border-4 border-blue-500"
+            />
+          </div>
+          <h3 className="font-semibold text-lg text-black">{testimonial.name}</h3>
+          <p className="text-blue-600 text-sm mt-1">{testimonial.role}</p>
+          <p className="italic text-sm text-gray-500 mt-1">{testimonial.profileTag}</p>
+          <p className="mt-3 text-gray-700 text-sm leading-relaxed">“{testimonial.quote}”</p>
+
+          {/* Rating Section */}
+          <div className="flex justify-center mt-4">
+            {[...Array(5)].map((_, i) => (
+              <i
+                key={i}
+                className={`fas fa-star text-sm ${
+                  i < testimonial.rating ? "text-yellow-500" : "text-gray-300"
                 }`}
               />
             ))}
           </div>
-        </section>
+        </div>
+      ))}
+    </div>
 
-        {/* Tagline above News Section */}
-        <section className="py-16 px-4 bg-blue-50 text-center">
-          <p className="italic text-xl mb-4">
-            Stay updated with the latest travel news!
-          </p>
-          <h2 className="text-3xl font-bold mb-10">
-            News & Articles from Tourm
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {[
-              {
-                id: 1,
-                title: "Eco-Conscious Travel Tips for 2025",
-                content:
-                  "Get inspired with sustainable travel tips that will help you reduce your environmental footprint...",
-                fullContent:
-                  "Discover essential tips for eco-conscious travelers in 2025. From choosing eco-friendly transportation to staying in green-certified accommodations, learn how you can make your travel adventures more sustainable.",
-                img: "https://images.unsplash.com/photo-1579340896087-a5c9d69e3226?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-              },
-              {
-                id: 2,
-                title: "Sustainable Travel: Reducing Your Carbon Footprint",
-                content:
-                  "The carbon footprint of travel is huge, but there are steps you can take to minimize it...",
-                fullContent:
-                  "Traveling sustainably doesn't mean giving up adventure. Learn how to reduce your carbon footprint by choosing eco-friendly transport, supporting green businesses, and offsetting your travel emissions.",
-                img: "https://images.unsplash.com/photo-1621328406204-01060d16bf24?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-              },
-              {
-                id: 3,
-                title: "The Future of Travel: Green Hotels & Eco Resorts",
-                content:
-                  "Eco-friendly hotels and resorts are popping up everywhere, providing luxury with sustainability...",
-                fullContent:
-                  "The hotel industry is embracing sustainability, offering eco-conscious travelers the chance to stay at properties that are powered by renewable energy, have water-saving systems, and use local organic products.",
-                img: "https://images.unsplash.com/photo-1742161189633-2aa9f1f24a7b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-              },
-              {
-                id: 4,
-                title: "The Rise of Electric Travel: Cars, Trains, and Planes",
-                content:
-                  "Electric vehicles are changing the way we travel, from electric cars to sustainable flights...",
-                fullContent:
-                  "Electric travel is gaining momentum, with electric cars and even electric planes emerging as viable alternatives to traditional carbon-emitting vehicles. Learn how these advancements are shaping the future of sustainable transportation.",
-                img: "https://images.unsplash.com/photo-1735852438557-24a86cce1f5e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-              },
-              {
-                id: 5,
-                title: "Top Eco-Friendly Destinations for 2025",
-                content:
-                  "If you're planning your next eco-friendly getaway, here are the best destinations to consider...",
-                fullContent:
-                  "From sustainable beaches to eco-friendly urban escapes, discover the top destinations for environmentally conscious travelers in 2025. These locations offer pristine nature while helping to preserve the environment.",
-                img: "https://images.unsplash.com/photo-1566873535350-a3f5d4a804b7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-              },
-              {
-                id: 6,
-                title: "Green Transportation: The Future of Travel",
-                content:
-                  "Sustainable transport options are transforming the way we travel...",
-                fullContent:
-                  "Green transportation is evolving, with bicycles, electric vehicles, and even solar-powered boats and trains offering new, eco-friendly ways to get around. Learn about the latest green transportation trends and how they are changing the travel landscape.",
-                img: "https://images.unsplash.com/photo-1717944441514-f27c7ca191c3?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-              },
-            ].map((item) => (
-              <NewsCard key={item.id} {...item} />
-            ))}
-          </div>
-        </section>
+    {/* Carousel Controls */}
+    <div className="flex justify-center gap-6 mt-8">
+      <button
+        onClick={prevSlide}
+        className="bg-white border border-blue-300 text-blue-600 px-4 py-2 rounded-full shadow hover:bg-blue-100 transition"
+      >
+        ← Previous
+      </button>
+      <button
+        onClick={nextSlide}
+        className="bg-white border border-blue-300 text-blue-600 px-4 py-2 rounded-full shadow hover:bg-blue-100 transition"
+      >
+        Next →
+      </button>
+    </div>
+  </div>
+</section>
+
 
         <Footer />
       </div>
