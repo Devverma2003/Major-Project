@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../Components/Navbar/Navbar";
 import Footer from "../Components/Footer";
+import { Link } from "react-router-dom"; 
 
 const Aboutpage = () => {
   const testimonials = [
@@ -69,22 +70,34 @@ const Aboutpage = () => {
       <Navbar />
       <div className="bg-blue-50 text-black">
 
-        {/* About Us Section */}
-        <section
-          className="relative h-[100vh] bg-cover bg-center flex items-center justify-center mt-16"
-          style={{ backgroundImage: 'url(abbackground.jpg)' }}  
-        >
-          <div className="text-center">
-            <h1 className="text-9xl font-bold text-white mb-4 font-serif">About Us</h1>
+        {/* Hero Section */}
+        <div className="w-full hero relative h-[100vh] flex items-center justify-center">
+          <div
+            className="absolute inset-0 bg-cover bg-center z-0"
+            style={{
+              backgroundImage: "url(abbackground.jpg)",
+            }}
+          ></div>
+
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/30 z-10"></div>
+
+          {/* Content */}
+          <div className="relative z-20 text-center px-4 max-w-4xl">
+            <h1 className="text-white italic text-2xl sm:text-6xl font-semibold leading-tight drop-shadow-lg">
+              Committed to <br /> Creating Meaningful <br /> Travel Experiences.
+            </h1>
+            <h2 className="text-white italic mt-6 text-lg sm:text-2xl font-medium drop-shadow">
+              From planning to execution, we focus on delivering thoughtful,<br />
+              stress-free travel designed to inspire, connect, and enrich.
+            </h2>
           </div>
-        </section>
+        </div>
 
         {/* Our Popular Tour Plans Section */}
-        <section
-        
-        >
-          <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-16">
-            {/* Left: Polaroid-style images */}
+        <section>
+          <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-16 my-20">
+            {/* Polaroid-style images */}
             <div className="relative w-full lg:w-1/2 flex justify-center">
               <div className="absolute top-0 left-10 transform -rotate-6 shadow-lg z-10">
                 <img
@@ -100,10 +113,9 @@ const Aboutpage = () => {
                   className="w-56 h-72 object-cover rounded-lg border-4 border-white"
                 />
               </div>
-              <div className="invisible lg:visible w-0 h-0"></div>
             </div>
 
-            {/* Right: Text and Circular Stats */}
+            {/* Text content */}
             <div className="w-full lg:w-1/2 text-center lg:text-left">
               <h2 className="text-3xl md:text-4xl font-bold text-blue-800 mb-4">Our Popular Tour Plans</h2>
               <p className="text-gray-700 text-lg mb-8">
@@ -135,7 +147,7 @@ const Aboutpage = () => {
         </section>
 
         {/* Testimonials Carousel */}
-        <section className="py-20 bg-blue-50 text-center">
+        <section className="py-20 bg-blue-50 text-center -mt-12">
           <h2 className="text-4xl font-extrabold text-blue-800 mb-10">What Our Clients Say</h2>
 
           <div className="relative max-w-7xl mx-auto px-4">
@@ -157,14 +169,11 @@ const Aboutpage = () => {
                   <p className="italic text-sm text-gray-500 mt-1">{testimonial.profileTag}</p>
                   <p className="mt-3 text-gray-700 text-sm leading-relaxed">“{testimonial.quote}”</p>
 
-                  {/* Rating Section */}
                   <div className="flex justify-center mt-4">
                     {[...Array(5)].map((_, i) => (
                       <i
                         key={i}
-                        className={`fas fa-star text-sm ${
-                          i < testimonial.rating ? "text-yellow-500" : "text-gray-300"
-                        }`}
+                        className={`fas fa-star text-sm ${i < testimonial.rating ? "text-yellow-500" : "text-gray-300"}`}
                       />
                     ))}
                   </div>
@@ -176,19 +185,31 @@ const Aboutpage = () => {
             <div className="flex justify-center gap-6 mt-8">
               <button
                 onClick={prevSlide}
-                className="bg-white border border-blue-300 text-blue-600 px-4 py-2 rounded-full shadow hover:bg-blue-100 transition"
+                className="bg-white border border-blue-300 text-blue-600 px-4 py-2 rounded-full shadow hover:bg-blue-100 transition text-xl"
               >
-                Prev
+                <i className="fas fa-chevron-left" />
               </button>
               <button
                 onClick={nextSlide}
-                className="bg-white border border-blue-300 text-blue-600 px-4 py-2 rounded-full shadow hover:bg-blue-100 transition"
+                className="bg-white border border-blue-300 text-blue-600 px-4 py-2 rounded-full shadow hover:bg-blue-100 transition text-xl"
               >
-                Next
+                <i className="fas fa-chevron-right" />
               </button>
             </div>
           </div>
         </section>
+
+        <section className="text-black py-12 text-center -mt-10">
+  <h2 className="text-2xl font-bold mb-4">Ready to Plan Your Next Adventure?</h2>
+  <p className="mb-6">Let us help you create unforgettable memories.</p>
+  <div className="w-full flex justify-center">
+    <Link to="/destination">
+      <button className="px-6 py-2 rounded-full font-semibold shadowtransition">
+        Explore Packages
+      </button>
+    </Link>
+  </div>
+</section>
 
         <Footer />
       </div>
