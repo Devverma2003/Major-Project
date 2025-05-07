@@ -1,19 +1,12 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 
-const DestinationCard = ({ image, title, listings, isActive }) => {
+const DestinationCard = ({ image, title, listings }) => {
   return (
-    <motion.div
-      className={`
+    <div
+      className="
         relative rounded-2xl overflow-hidden shadow-lg transition-all duration-300 shrink-0
-        ${isActive ? 'scale-105 z-20 ring-2 ring-white/60' : 'scale-95 z-10'}
         w-64 h-96 mx-4
-      `}
-      whileHover={{ scale: 1.07 }}
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      viewport={{ once: true }}
+      "
     >
       <img
         src={image}
@@ -35,7 +28,7 @@ const DestinationCard = ({ image, title, listings, isActive }) => {
       >
         View All →
       </button>
-    </motion.div>
+    </div>
   );
 };
 
