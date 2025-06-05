@@ -12,31 +12,31 @@ const Firstcards = () => {
       image: "https://plus.unsplash.com/premium_photo-1661811412990-89e53022a6cc?q=80&w=2072&auto=format&fit=crop",
       title: "Ghorepani Poon Hill Trek",
       description: "Bhutan, Pokhara",
-      price: "₹569.00/person",
+      price: "₹5600/person",
     },
     {
       image: "https://images.unsplash.com/photo-1668262121183-08bf7a35cc82?w=600&auto=format&fit=crop",
       title: "Goa Beach Escape",
       description: "Goa, India",
-      price: "₹600/person",
+      price: "₹6000/person",
     },
     {
       image: "https://images.unsplash.com/photo-1625710338921-aae2ae99bbb8?w=600&auto=format&fit=crop",
       title: "Everest Base Camp Trek",
       description: "Manali, Himachal Pradesh",
-      price: "₹250/person",
+      price: "₹2500/person",
     },
     {
       image: "https://images.unsplash.com/photo-1717323821798-8cee2f6826ff?w=600&auto=format&fit=crop",
       title: "Varanasi, Uttar Pradesh",
       description: "Spiritual city on the banks of the Ganges.",
-      price: "₹200/person",
+      price: "₹2000/person",
     },
     {
       image: "https://plus.unsplash.com/premium_photo-1661962404003-e0ca40da40ef?w=600&auto=format&fit=crop",
       title: "Jaipur, Rajasthan",
-      description: "The Pink City with majestic forts and rich culture.",
-      price: "₹300/person",
+      description: "The Pink City with majestic forts.",
+      price: "₹3000/person",
     },
   ];
 

@@ -10,12 +10,7 @@ const Footer = () => {
         <h2 className="text-lg font-bold">TravelSite</h2>
         <p className="text-sm text-gray-400">&copy; 2025 All rights reserved.</p>
       </div>
-      <nav className="flex space-x-4">
-        <a href="#" className="text-gray-400 hover:text-white">Home</a>
-        <a href="#" className="text-gray-400 hover:text-white">About</a>
-        <a href="#" className="text-gray-400 hover:text-white">Services</a>
-        <a href="#" className="text-gray-400 hover:text-white">Contact</a>
-      </nav>
+     
       <div className="flex space-x-4 mt-4 md:mt-0">
         <a href="#" className="text-gray-400 hover:text-white">
           <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.28 4.28 0 001.88-2.37 8.45 8.45 0 01-2.7 1.03A4.22 4.22 0 0015.79 4c-2.38 0-4.3 1.92-4.3 4.3 0 .34.04.68.11 1A12.13 12.13 0 013.16 5.14a4.26 4.26 0 001.33 5.7 4.21 4.21 0 01-1.95-.54v.06c0 2.08 1.48 3.81 3.44 4.2a4.32 4.32 0 01-1.94.07c.55 1.72 2.13 2.98 4 3.02a8.47 8.47 0 01-5.24 1.8A8.93 8.93 0 012 19.1a12.05 12.05 0 006.56 1.92c7.88 0 12.2-6.53 12.2-12.2l-.01-.56A8.56 8.56 0 0022.46 6z" /></svg>

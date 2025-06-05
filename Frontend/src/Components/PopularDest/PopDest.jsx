@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom'; // ✅ import navigate
 import DestinationCard from './Destinationcard';
 
 const destinations = [
@@ -16,6 +17,7 @@ const CARD_WIDTH = 300;
 
 const PopularDestinations = () => {
   const scrollRef = useRef(null);
+  const navigate = useNavigate(); // ✅
 
   useEffect(() => {
     const container = scrollRef.current;
@@ -39,6 +41,10 @@ const PopularDestinations = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const handleCardClick = (title) => {
+    navigate(`/destination`); // e.g. /destination/bali
+  };
+
   return (
     <div className="text-center mb-24 -mt-10 ">
       <p className="text-xl text-gray-600">Top Destination</p>
@@ -52,7 +58,7 @@ const PopularDestinations = () => {
             return (
               <motion.div
                 key={index}
-                className="relative"
+                className="relative cursor-pointer"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 whileHover={{ scale: 0.9 }}
@@ -61,6 +67,7 @@ const PopularDestinations = () => {
                 style={{ zIndex }}
                 onHoverStart={() => setZIndex(30)}
                 onHoverEnd={() => setZIndex(10)}
+                onClick={() => handleCardClick(dest.title)} // ✅ click event
               >
                 <DestinationCard {...dest} />
               </motion.div>

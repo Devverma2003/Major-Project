@@ -1,8 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaSuitcase, FaUserTie } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const PlanTripSection = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/AboutPage"); // ✅ Update this route if your actual path is different
+  };
+
   return (
     <section className="px-6 py-16">
       <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-between gap-10">
@@ -88,6 +95,7 @@ const PlanTripSection = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             className="text-white px-6 py-3 rounded-full font-medium transition"
+             onClick={handleClick}
           >
             Learn More →
           </motion.button>

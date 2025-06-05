@@ -25,9 +25,7 @@ const Signup = () => {
             />
           </div>
           <button  className="submit"type="submit">Submit</button>
-          <h2 align="center">
-            OR
-          </h2>
+         
         </form>
         <p>
           Have an account ? <Link to="/login"> Login </Link>

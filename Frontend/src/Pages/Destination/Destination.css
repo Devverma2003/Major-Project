@@ -43,7 +43,7 @@ height: 80vh;
 }
 
 .section4{
-  background-image: url('bg.jpg') ;
+  /* background-image: url('bg.jpg') ; */
   background-size: contain;
   background-position: center;
   height: 80vh;
