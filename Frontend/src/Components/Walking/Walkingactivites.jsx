@@ -1,11 +1,18 @@
-
-import { Binoculars, Trees, Car } from "lucide-react";
+import { Binoculars, Trees, Car, Footprints } from "lucide-react";
 
 const activities = [
-  { icon: <Car className="w-4 h-4 text-green-600" />, label: "Safari" },
-  { icon: <Binoculars className="w-4 h-4 text-blue-600" />, label: "Bird Watching" },
-  { icon: <Trees className="w-4 h-4 text-emerald-600" />, label: "Nature Walks" },
- 
+  {
+    icon: <Footprints className="w-4 h-4 text-orange-600" />,
+    label: "Walking",
+  },
+  {
+    icon: <Footprints className="w-4 h-4 text-blue-600" />,
+  label: "Walking Safari",
+  },
+  {
+    icon: <Trees className="w-4 h-4 text-emerald-600" />,
+    label: "Nature Walks",
+  },
 ];
 
 const ActivityList = () => {

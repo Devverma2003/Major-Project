@@ -2,42 +2,43 @@ import React from "react";
 
 const activities = [
   {
-    title: "Jeep Safari",
-    description: "Ride through dense forests and spot wildlife up close.",
-    image: "jeep2.avif",
+    title: "Walking Safari",
+    description: "Embark on foot to discover wildlife in its natural setting.",
+    image: "jeep2.jpg",
   },
   {
-    title: "Bird Watching",
-    description: "Observe rare and migratory birds in natural habitats.",
-    image: "bird.avif",
+    title: "Bird Watching Walk",
+    description: "Enjoy serene trails while spotting colorful bird species.",
+    image: "bird.jpg",
   },
   {
-    title: "Boat Safari",
-    description: "Cruise through riverine landscapes and mangroves.",
-    image: "boat.jpg",
+    title: "Riverside Walk",
+    description: "Stroll alongside tranquil rivers and mangrove edges.",
+    image: "boat2.jpg",
   },
   {
-    title: "Nature Walks",
-    description: "Take guided or solo treks through scenic trails.",
-    image: "walk.avif",
+    title: "Nature Trail",
+    description: "Explore scenic forest paths with guided walking tours.",
+    image: "walk.jpg",
   },
   {
-    title: "Night Safari",
-    description: "Experience the jungle after dark and spot nocturnal animals.",
-    image: "night.avif",
+    title: "Night Walk",
+    description: "Step into the wilderness after dark for a rare experience.",
+    image: "night.jpg",
   },
   {
-    title: "Camping",
-    description: "Stay under the stars in jungle campsites.",
-    image: "camp.avif",
+    title: "Camping Walk Prep",
+    description: "Walk into your campsite for an immersive overnight stay.",
+    image: "camp.jpg",
   },
 ];
+
 
 const WildlifeActivities = () => {
   return (
     <section className="pt-12">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-10 txt">
+        <h2 className="text-3xl font-bold text-center  mt-14 mb-10 txt">
           Explore More With These Activities
         </h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -47,8 +48,7 @@ const WildlifeActivities = () => {
               className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
             >
               <img
-               src={`/${activity.image}`}
-// Fixed: ensure leading slash
+                src={`/${activity.image}`} // Fixed: ensure leading slash
                 alt={activity.title}
                 className="w-full h-48 object-cover"
               />

@@ -1,0 +1,13 @@
+.section1{
+  background-image: url('/bg.jpg');
+    background-size: contain;
+    background-position: center;
+    height: 60vh;
+    mix-blend-mode: color;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    opacity: 0.8;
+  } 

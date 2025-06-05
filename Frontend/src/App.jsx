@@ -5,6 +5,7 @@ import Destination from './Pages/Destination/Destination';
 import BookNow from "./pages/Destination/BookNow";
 import Categories from './Pages/Categories/Categories';
 import Wildlife from './Components/Wildlife/Wildlife';
+import Walking from './Components/Walking/Walking';
 import Aboutpage from "./Pages/Aboutpage";
 import Signup from './Pages/Signup-login/Signup';
 import Login from './Pages/Signup-login/Login';
@@ -21,6 +22,7 @@ function App() {
       <Route path="/Aboutpage" element={<Aboutpage />} />
       <Route path="/Categories" element={<Categories />} />
       <Route path="/Categories/Wildlife" element={<Wildlife />} />
+      <Route path="/category/walking" element={<Walking />} />
     </Routes>
   );
 }
