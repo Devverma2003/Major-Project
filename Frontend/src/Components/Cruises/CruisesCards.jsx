@@ -3,44 +3,43 @@ import Slider from "react-slick";
 import { useNavigate } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import ActivityList from "./Walkingactivites";
+import ActivityList from "./Cruisesactivity";
 
 const Wildlifecards = () => {
   const navigate = useNavigate();
 
   const cardData = [
-  {
-    image: "walk1.jpg",
-    title: "Valley of Flowers Trek",
-    description: "Uttarakhand",
-    price: "₹1800/person",
-  },
-  {
-    image: "walk2.jpg",
-    title: "Kaziranga Walking Trail",
-    description: "Assam",
-    price: "₹2000/person",
-  },
-  {
-    image: "walk3.jpg",
-    title: "Sundarbans Mangrove Walk",
-    description: "West Bengal",
-    price: "₹2200/person",
-  },
-  {
-    image: "walk4.jpg",
-    title: "Gir Forest Nature Walk",
-    description: "Gujarat",
-    price: "₹1900/person",
-  },
-  {
-    image: "walk5.jpg",
-    title: "Hemis High-Altitude Trek",
-    description: "Ladakh",
-    price: "₹3200/person",
-  },
-];
-
+    {
+      image: "cruises1.jpg",
+      title: "Goa Luxury Cruise",
+      description: "Mumbai to Goa",
+      price: "₹4500/person",
+    },
+    {
+      image: "cruises2.jpg",
+      title: "Sundarban River Cruise",
+      description: "West Bengal",
+      price: "₹4000/person",
+    },
+    {
+      image: "cruises3.jpg",
+      title: "Andaman Island Cruise",
+      description: "Port Blair Round Trip",
+      price: "₹6000/person",
+    },
+    {
+      image: "cruises4.jpg",
+      title: "Lakshadweep Cruise",
+      description: "Cochin to Lakshadweep",
+      price: "₹5500/person",
+    },
+    {
+      image: "cruises5.jpg",
+      title: "Backwater Houseboat",
+      description: "Alleppey, Kerala",
+      price: "₹3000/person",
+    },
+  ];
 
   const settings = {
     dots: true,
@@ -57,7 +56,7 @@ const Wildlifecards = () => {
   };
 
   return (
-    <div className="relative z-10 mt-10 px-4 mb-10 ">
+    <div className="relative z-10 mt-10 px-4">
       <div className="max-w-7xl mx-auto">
         <Slider {...settings}>
           {cardData.map((card, index) => (
@@ -81,12 +80,13 @@ const Wildlifecards = () => {
                   <div className="mt-4 flex justify-between items-center text-sm text-gray-600">
                     <span className="flex items-center gap-1">
                       <img
-                        src="/clock.png" // ✅ Make sure this file exists in /public
+                        src="/clock.png"
                         className="w-4 h-4"
                         alt="duration"
                       />
-                      3 days
+                      3 Nights / 4 Days
                     </span>
+
                     <button
                       onClick={() =>
                         navigate("/book-now", {

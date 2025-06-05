@@ -23,10 +23,10 @@ const cardData = [
     path: '/category/cruises',
   },
   {
-    title: 'Hiking',
+    title: 'City',
     image:
-      'https://plus.unsplash.com/premium_photo-1677002240252-af3f88114efc?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aGlraW5nfGVufDB8fDB8fHww',
-    path: '/category/hiking',
+      'https://images.unsplash.com/photo-1672970514624-523eedcd76b8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNpdHl0b3VyfGVufDB8fDB8fHww',
+    path: '/category/citytour',
   },
 ]
 

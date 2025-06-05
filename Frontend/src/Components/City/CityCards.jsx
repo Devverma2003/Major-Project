@@ -3,44 +3,43 @@ import Slider from "react-slick";
 import { useNavigate } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import ActivityList from "./Walkingactivites";
+import ActivityList from "./Cityactivites";  
 
-const Wildlifecards = () => {
+const CityCards = () => {
   const navigate = useNavigate();
 
   const cardData = [
-  {
-    image: "walk1.jpg",
-    title: "Valley of Flowers Trek",
-    description: "Uttarakhand",
-    price: "₹1800/person",
-  },
-  {
-    image: "walk2.jpg",
-    title: "Kaziranga Walking Trail",
-    description: "Assam",
-    price: "₹2000/person",
-  },
-  {
-    image: "walk3.jpg",
-    title: "Sundarbans Mangrove Walk",
-    description: "West Bengal",
-    price: "₹2200/person",
-  },
-  {
-    image: "walk4.jpg",
-    title: "Gir Forest Nature Walk",
-    description: "Gujarat",
-    price: "₹1900/person",
-  },
-  {
-    image: "walk5.jpg",
-    title: "Hemis High-Altitude Trek",
-    description: "Ladakh",
-    price: "₹3200/person",
-  },
-];
-
+    {
+      image: "city1.jpg",
+      title: "New York City",
+      description: "The Big Apple",
+      price: "₹3500/person",
+    },
+    {
+      image: "city2.jpg",
+      title: "Paris",
+      description: "City of Lights",
+      price: "₹4500/person",
+    },
+    {
+      image: "city3.jpg",
+      title: "Tokyo",
+      description: "Land of the Rising Sun",
+      price: "₹4000/person",
+    },
+    {
+      image: "city4.jpg",
+      title: "London",
+      description: "Capital of England",
+      price: "₹3700/person",
+    },
+    {
+      image: "city5.jpg",
+      title: "Dubai",
+      description: "City of Gold",
+      price: "₹4200/person",
+    },
+  ];
 
   const settings = {
     dots: true,
@@ -57,14 +56,14 @@ const Wildlifecards = () => {
   };
 
   return (
-    <div className="relative z-10 mt-10 px-4 mb-10 ">
+    <div className="relative z-10 mt-10 px-4">
       <div className="max-w-7xl mx-auto">
         <Slider {...settings}>
           {cardData.map((card, index) => (
             <div key={index} className="px-3">
               <div className="bg-white rounded-3xl overflow-hidden shadow-lg max-w-[350px] mx-auto">
                 <img
-                  src={`/${card.image}`} // ✅ Fixed image path
+                  src={`/${card.image}`}
                   alt={card.title}
                   className="h-56 w-full object-cover"
                 />
@@ -75,13 +74,12 @@ const Wildlifecards = () => {
                   <p className="text-gray-600">{card.description}</p>
                   <p className="text-black font-bold">{card.price}</p>
 
-                  {/* 🧭 Activity Icons */}
                   <ActivityList />
 
                   <div className="mt-4 flex justify-between items-center text-sm text-gray-600">
                     <span className="flex items-center gap-1">
                       <img
-                        src="/clock.png" // ✅ Make sure this file exists in /public
+                        src="/clock.png"
                         className="w-4 h-4"
                         alt="duration"
                       />
@@ -98,7 +96,7 @@ const Wildlifecards = () => {
                           },
                         })
                       }
-                      className="border px-4 py-1 rounded-lg text-sm  transition-colors duration-300"
+                      className="border px-4 py-1 rounded-lg text-sm transition-colors duration-300"
                     >
                       Book Now!
                     </button>
@@ -113,4 +111,4 @@ const Wildlifecards = () => {
   );
 };
 
-export default Wildlifecards;
+export default CityCards;

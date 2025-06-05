@@ -6,9 +6,11 @@ import BookNow from "./pages/Destination/BookNow";
 import Categories from './Pages/Categories/Categories';
 import Wildlife from './Components/Wildlife/Wildlife';
 import Walking from './Components/Walking/Walking';
+import Cruises from './Components/Cruises/Cruises';
 import Aboutpage from "./Pages/Aboutpage";
 import Signup from './Pages/Signup-login/Signup';
 import Login from './Pages/Signup-login/Login';
+import City from './Components/City/City';
 
 
 function App() {
@@ -23,6 +25,8 @@ function App() {
       <Route path="/Categories" element={<Categories />} />
       <Route path="/Categories/Wildlife" element={<Wildlife />} />
       <Route path="/category/walking" element={<Walking />} />
+      <Route path="/category/cruises" element={<Cruises />} />
+      <Route path="/category/citytour" element={<City />} />
     </Routes>
   );
 }
