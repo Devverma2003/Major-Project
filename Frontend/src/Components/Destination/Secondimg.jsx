@@ -12,11 +12,11 @@ const images = [
 
 export default function TravelGallery() {
   return (
-    <div className="mt-10 section2 flex items-center justify-center flex-col px-4">
+    <div className="mt-80 section2 flex items-center justify-center flex-col px-4">
       <h1 className="font-script text-3xl sm:text-4xl mt-10 text-center font-medium">
         Make Your Town More Pleasant
       </h1>
-      <h1 className="text-4xl sm:text-5xl text-center font-medium mt-2">
+      <h1 className="text-4xl sm:text-5xl text-center font-medium mt-24">
         Recent Gallery
       </h1>
 
