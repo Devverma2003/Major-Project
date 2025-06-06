@@ -52,15 +52,24 @@ const Navbar = () => {
                     <NavLink
                       key={item.name}
                       to={item.href}
+                      // className={({ isActive }) =>
+                      //   classNames(
+                      //     isActive
+                      //       ? ' text-black'
+                      //       : 'text-black hover:bg-blue-400 hover:bg-opacity-55',
+                      //     'rounded-md px-3 py-2 text-lg font-medium'
+                      //   )
+                      // }
                       className={({ isActive }) =>
-                        classNames(
-                          isActive
-                            ? ' text-black'
-                            : 'text-black hover:bg-blue-400 hover:bg-opacity-55',
-                          'rounded-md px-3 py-2 text-lg font-medium'
-                        )
-                      }
-                    >
+  classNames(
+    isActive
+      ? 'text-black font-semibold '
+      : 'text-black ',
+    'rounded-md px-3 py-2 text-lg transition-all duration-200'
+  )
+}
+
+              >
                       {item.name}
                     </NavLink>
                   ))}

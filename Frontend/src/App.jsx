@@ -11,10 +11,12 @@ import Aboutpage from "./Pages/Aboutpage";
 import Signup from './Pages/Signup-login/Signup';
 import Login from './Pages/Signup-login/Login';
 import City from './Components/City/City';
+import { ToastContainer } from 'react-toastify';
 
 
 function App() {
   return (
+    <>
     <Routes>
       <Route path="/" element={<Homepage />} />
       <Route path="/destination" element={<Destination />} />
@@ -28,6 +30,8 @@ function App() {
       <Route path="/category/cruises" element={<Cruises />} />
       <Route path="/category/citytour" element={<City />} />
     </Routes>
+    <ToastContainer/>
+</>
   );
 }
 
