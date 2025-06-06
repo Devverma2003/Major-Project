@@ -59,7 +59,7 @@ const GridWrapper = styled.div`
 `;
 
 const StyledCard = styled.div`
-  background: white;
+  background: grey;
   width: 20rem;
   padding: 25px 20px;
   border: 4px solid #7cdacc;
