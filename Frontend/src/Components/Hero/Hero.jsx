@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./Hero.css";
 
 const Hero = () => {
@@ -12,46 +14,50 @@ const Hero = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Validations
     if (!from.trim()) {
-      alert("Please enter a valid 'From' location.");
+      toast.error("Please enter a valid 'From' location.");
       return;
     }
 
     if (!to.trim()) {
-      alert("Please enter a valid 'To' location.");
+      toast.error("Please enter a valid 'To' location.");
       return;
     }
 
     if (!passengers || Number(passengers) <= 0) {
-      alert("Please enter a valid number of passengers greater than 0.");
+      toast.error("Please enter a valid number of passengers greater than 0.");
       return;
     }
 
     if (!date) {
-      alert("Please select a date.");
+      toast.error("Please select a date.");
       return;
     }
 
-    // Optional: check if date is not in the past
     const selectedDate = new Date(date);
     const today = new Date();
-    today.setHours(0, 0, 0, 0); // reset time to compare only dates
+    today.setHours(0, 0, 0, 0);
 
     if (selectedDate < today) {
-      alert("Please select a valid date (not in the past).");
+      toast.error("Please select a valid date (not in the past).");
       return;
     }
 
-    // If all validations pass, navigate
-    navigate(
-      `/destination?from=${encodeURIComponent(from)}&to=${encodeURIComponent(
-        to
-      )}&passengers=${passengers}&date=${date}`
-    );
+    // Build query params and navigate
+    const queryParams = new URLSearchParams({
+      from,
+      to,
+      passengers,
+      date,
+    }).toString();
+
+    navigate(`/search?${queryParams}`);
   };
 
   return (
     <div className="w-full hero relative">
+      {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center z-0"
         style={{
@@ -61,20 +67,17 @@ const Hero = () => {
       ></div>
       <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
 
-   <div className="relative z-20 flex flex-col items-center justify-center text-center pt-56 px-4 h-full">
-        <h1 className="text-white  text-3xl sm:text-5xl font-bold">
+      {/* Hero Content */}
+      <div className="relative z-20 flex flex-col items-center justify-center text-center pt-56 px-4 h-full">
+        <h1 className="text-white text-3xl sm:text-5xl font-bold">
           Explore the Beauty of the Whole World
         </h1>
         <h2 className="text-white mt-4 text-lg sm:text-xl font-medium">
           "Get unforgettable pleasure with us!"
         </h2>
 
-
-
-
-
         {/* Form */}
-        <div className="w-full max-w-6xl mt-10 sm:mt-20 lg:mt-80 px-4 mx-auto ">
+        <div className="w-full max-w-6xl mt-10 sm:mt-20 lg:mt-80 px-4 mx-auto">
           <form
             onSubmit={handleSubmit}
             className="form flex flex-wrap sm:flex-nowrap items-center justify-between border-4 rounded-xl gap-4 bg-white p-4"
@@ -110,24 +113,23 @@ const Hero = () => {
               className="flex-1 min-w-[160px] border-2 text-xl text-center border-gray-200 p-2 rounded-lg text-black"
             />
 
-           <button
-  type="submit"
-  className="w-full sm:w-auto flex-shrink-0 frmbtn text-white font-semibold px-6 py-2 rounded-full shadow transition-all duration-300 flex items-center justify-center"
->
-  Search
-  <svg
-    className="w-5 h-6 ml-2"
-    viewBox="0 0 24 24"
-    fill="currentColor"
-  >
-    <path
-      fillRule="evenodd"
-      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
-      clipRule="evenodd"
-    />
-  </svg>
-</button>
-
+            <button
+              type="submit"
+              className="w-full sm:w-auto flex-shrink-0 frmbtn text-white font-semibold px-6 py-2 rounded-full shadow transition-all duration-300 flex items-center justify-center"
+            >
+              Search
+              <svg
+                className="w-5 h-6 ml-2"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </button>
           </form>
         </div>
       </div>

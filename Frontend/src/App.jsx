@@ -12,6 +12,7 @@ import Signup from './Pages/Signup-login/Signup';
 import Login from './Pages/Signup-login/Login';
 import City from './Components/City/City';
 import { ToastContainer } from 'react-toastify';
+import Search from './Components/Search/Search';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
       <Route path="/category/walking" element={<Walking />} />
       <Route path="/category/cruises" element={<Cruises />} />
       <Route path="/category/citytour" element={<City />} />
+      <Route path="/Search" element={<Search/>} />
     </Routes>
     <ToastContainer/>
 </>
