@@ -2,7 +2,7 @@
   background-image: url('/bg.jpg');
     background-size: contain;
     background-position: center;
-    height: 60vh;
+    height: 80vh;
     mix-blend-mode: color;
     display: flex;
     justify-self: center;

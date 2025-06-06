@@ -1,31 +1,38 @@
 import React from "react";
 
 const stats = [
-  { value: "12", label: "Years Experience", dotPos: "bottom-[6px] right-[6px]", position: "translate-y-8 md:translate-y-12" },
-  { value: "97%", label: "Retention Rate", dotPos: "top-[6px] right-[6px]", position: "-translate-y-8 md:-translate-y-12" },
-  { value: "8k", label: "Tour Completed", dotPos: "bottom-[6px] right-[6px]", position: "translate-y-8 md:translate-y-12" },
-  { value: "19k", label: "Happy Travellers", dotPos: "top-[6px] right-[6px]", position: "-translate-y-8 md:-translate-y-12" },
+  { value: "12", label: "Years Experience", dotPos: "bottom-[6px] left-[6px]", position: "translate-y-4 md:translate-y-8" },
+  { value: "97%", label: "Retention Rate", dotPos: "top-[6px] left-[6px]", position: "-translate-y-4 md:-translate-y-8" },
+  { value: "8k", label: "Tour Completed", dotPos: "bottom-[6px] left-[6px]", position: "translate-y-4 md:translate-y-8" },
+  { value: "19k", label: "Happy Travellers", dotPos: "top-[6px] left-[6px]", position: "-translate-y-4 md:-translate-y-8" },
 ];
 
 const StatCard = ({ value, label, dotPos, position }) => (
   <div
-    className={`
-      relative mt-10 sm:mt-12 w-[140px] h-[140px] sm:w-[160px] sm:h-[160px] md:w-[200px] md:h-[200px]
+    className={`relative z-10
+      w-24 sm:w-28 md:w-36 lg:w-44 
+      aspect-square 
       rounded-full border-[3px] border-cyan-500 
       flex flex-col items-center justify-center text-center bg-cyan-50 shadow-inner
       transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg
       ${position}
     `}
   >
-    <div className="text-xl sm:text-2xl md:text-3xl font-bold text-black">{value}</div>
-    <div className="text-xs sm:text-sm md:text-base text-black mt-1">{label}</div>
-    <div className={`absolute w-[10px] h-[10px] sm:w-[12px] sm:h-[12px] md:w-[15px] md:h-[15px] bg-cyan-500 rounded-full ${dotPos}`} />
+    <div className="text-base sm:text-xl md:text-2xl lg:text-3xl font-bold text-black">
+      {value}
+    </div>
+    <div className="text-[10px] sm:text-sm md:text-base text-black mt-1">{label}</div>
+    <div
+      className={`absolute bg-cyan-500 rounded-full 
+        w-[8px] h-[8px] sm:w-[10px] sm:h-[10px] md:w-[12px] md:h-[12px] lg:w-[15px] lg:h-[15px] 
+        ${dotPos}`}
+    />
   </div>
 );
 
 const StatsSection = () => {
   return (
-    <div className="section3 flex flex-wrap justify-center items-center gap-6 sm:gap-8 px-4 sm:px-6 py-10 sm:py-12 bg-[#F9F9FB] font-semibold min-h-full relative overflow-hidden">
+    <div className="section3 relative z-10 flex flex-wrap justify-center lg:justify-start items-center gap-4 sm:gap-6 md:gap-8 px-4 sm:px-6 py-10 sm:py-14 lg:py-20 bg-[#F9F9FB] font-semibold text-center lg:text-left">
       {stats.map((stat, index) => (
         <StatCard
           key={index}
