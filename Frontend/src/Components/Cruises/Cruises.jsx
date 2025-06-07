@@ -10,7 +10,7 @@ const Cruises = () => {
     <>
       <Navbar />
       <div className="section1">
-        <h1 className="font-script text-4xl mt-28 text-center font-medium ">
+        <h1 className="font-script text-4xl mt-24 text-center font-medium ">
           "Top cruise experiences for unforgettable ocean adventures."
         </h1>
         <p className="text-lg text-center mt-4 max-w-2xl mx-auto">
@@ -21,7 +21,6 @@ const Cruises = () => {
       <div className="h-screen w-full mt-80">
         <CruiseActivities />
       </div>
-      <Footer />
     </>
   );
 };

@@ -3,7 +3,6 @@ import './Walking.css'
 import Walkingcards from './WalkingCards'
 import Navbar from '../Navbar/Navbar'
 import WalkingActivities from './Walkingexploreactivites'
-import Footer from '../Footer'
 
 
 const Wildlife = () => {
@@ -11,7 +10,7 @@ const Wildlife = () => {
     <>
     <Navbar/>
    <div className='section1'>
-  <h1 className='font-script text-4xl mt-28 text-center font-medium'>
+  <h1 className='font-script text-4xl mt-24 text-center font-medium'>
     "Top walking experiences for unforgettable nature escapes."
   </h1>
 
@@ -29,7 +28,6 @@ const Wildlife = () => {
 
 <WalkingActivities/>
 </div>
-<Footer/>
     </>
   )
 }

@@ -10,7 +10,7 @@ const City = () => {
     <>
       <Navbar />
       <div className='section1'>
-        <h1 className='font-script text-4xl mt-28 text-center font-medium'>
+        <h1 className='font-script text-4xl mt-24 text-center font-medium'>
           "Explore vibrant cities with rich culture and unforgettable experiences."
         </h1>
         <p className="text-lg text-center mt-4 max-w-2xl mx-auto">
