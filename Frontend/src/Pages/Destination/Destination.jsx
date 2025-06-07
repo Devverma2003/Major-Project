@@ -15,7 +15,7 @@ const Destination = () => {
        <First/>
        <Firstcards/>
        <Secondimg/>
-       <Third/>
+       {/* <Third/> */}
        <Fourth/>
        <Footer />
     </div>

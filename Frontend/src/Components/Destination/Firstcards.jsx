@@ -47,53 +47,52 @@ const Firstcards = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 3500,
     responsive: [
+      { breakpoint: 1280, settings: { slidesToShow: 3 } },
       { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 768, settings: { slidesToShow: 1 } },
+      { breakpoint: 640, settings: { slidesToShow: 1 } },
     ],
   };
 
   return (
-    <div className="relative z-10 -mt-28 px-4">
-      <div className="max-w-7xl mx-auto">
-        <Slider {...settings}>
-          {cardData.map((card, index) => (
-            <div key={index} className="px-3">
-              <div className="bg-white rounded-3xl overflow-hidden shadow-lg max-w-[350px] mx-auto">
-                <img src={card.image} alt={card.title} className="h-56 w-full object-cover" />
-                <div className="p-5">
-                  <h3 className="text-xl font-semibold text-gray-900">{card.title}</h3>
-                  <p className="text-gray-600">{card.description}</p>
-                  <p className="text-black font-bold">{card.price}</p>
-                  <div className="mt-4 flex justify-between items-center text-sm text-gray-600">
-                    <span className="flex items-center gap-1">
-                      <img src="/clock.png" className="w-4 h-4" alt="duration" />
-                      5 days
-                    </span>
-                    <button
-                      onClick={() =>
-                        navigate("/book-now", {
-                          state: {
-                            title: card.title,
-                            description: card.description,
-                            image: card.image,
-                            price: card.price,
-                          },
-                        })
-                      }
-                      className="border px-4 py-1 rounded-lg text-sm hover:bg-cyan-400 transition-colors duration-300"
-                    >
-                      Book Now!
-                    </button>
-                  </div>
+    <section className="relative sm:mb-0 md:mb-0 lg:mb-0 mb-96 lg:-mt-48 py-20 px-6 sm:px-10 lg:px-20 max-w-7xl mx-auto">
+      <Slider {...settings}>
+        {cardData.map((card, index) => (
+          <div key={index} className="px-3">
+            <div className="bg-white rounded-3xl overflow-hidden shadow-lg max-w-sm mx-auto hover:shadow-2xl transition-shadow duration-300">
+              <img src={card.image} alt={card.title} className="h-56 sm:h-64 w-full object-cover" />
+              <div className="p-5">
+                <h3 className="text-xl font-semibold text-gray-900">{card.title}</h3>
+                <p className="text-gray-600 mt-1">{card.description}</p>
+                <p className="text-black font-bold mt-2">{card.price}</p>
+                <div className="mt-4 flex justify-between items-center text-sm text-gray-600">
+                  <span className="flex items-center gap-1">
+                    <img src="/clock.png" alt="duration" className="w-4 h-4" />
+                    5 days
+                  </span>
+                  <button
+                    onClick={() =>
+                      navigate("/book-now", {
+                        state: {
+                          title: card.title,
+                          description: card.description,
+                          image: card.image,
+                          price: card.price,
+                        },
+                      })
+                    }
+                    className="border border-cyan-500 px-4 py-1 rounded-lg text-sm hover:bg-cyan-400 hover:text-white transition-colors duration-300"
+                  >
+                    Book Now!
+                  </button>
                 </div>
               </div>
             </div>
-          ))}
-        </Slider>
-      </div>
-    </div>
+          </div>
+        ))}
+      </Slider>
+    </section>
   );
 };
 

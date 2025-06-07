@@ -12,21 +12,21 @@ const images = [
 
 export default function TravelGallery() {
   return (
-    <div className="mt-80 section2 flex items-center justify-center flex-col px-4">
-      <h1 className="font-script text-3xl sm:text-4xl mt-10 text-center font-medium">
-        Make Your Town More Pleasant
-      </h1>
-      <h1 className="text-4xl sm:text-5xl text-center font-medium mt-24">
-        Recent Gallery
-      </h1>
+<div className="mt-20 section2 flex items-center justify-center flex-col px-4 relative z-20">
+  <h1 className="font-script text-3xl sm:text-4xl text-center font-medium">
+    Make Your Town More Pleasant
+  </h1>
+  <h1 className="text-4xl sm:text-5xl text-center font-medium mt-2">
+    Recent Gallery
+  </h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-20 max-w-7xl w-full mx-auto">
+<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-20 max-w-7xl w-full mx-auto">
         {/* Image 1 */}
         <div className="w-full">
           <img
             src={images[0]}
             alt="img1"
-            className="rounded-2xl shadow-md object-cover w-full h-36 sm:h-40 md:h-44 lg:h-48 xl:h-52 mt-6 transition-transform duration-300 transform hover:scale-110"
+            className="rounded-2xl shadow-md object-cover w-full h-36 sm:h-40 md:h-44 lg:h-48 xl:h-52 transition-transform duration-300 transform hover:scale-110"
           />
         </div>
 
@@ -49,7 +49,7 @@ export default function TravelGallery() {
           <img
             src={images[3]}
             alt="img4"
-            className="rounded-2xl shadow-md object-cover w-full h-72 sm:h-80 md:h-[22rem] -mt-4 transition-transform duration-300 transform hover:scale-110"
+            className="rounded-2xl shadow-md object-cover w-full h-72 sm:h-80 md:h-[22rem] transition-transform duration-300 transform hover:scale-110"
           />
         </div>
 
@@ -72,7 +72,7 @@ export default function TravelGallery() {
           <img
             src={images[6]}
             alt="img7"
-            className="rounded-2xl shadow-md object-cover w-full h-36 sm:h-40 md:h-44 lg:h-48 mt-6 transition-transform duration-300 transform hover:scale-110"
+            className="rounded-2xl shadow-md object-cover w-full h-36 sm:h-40 md:h-44 lg:h-48 transition-transform duration-300 transform hover:scale-110"
           />
         </div>
       </div>

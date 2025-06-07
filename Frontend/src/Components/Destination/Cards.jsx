@@ -55,12 +55,17 @@ const GridWrapper = styled.div`
   gap: 2rem;
   padding: 2rem;
   justify-items: center;
-  margin-top:-27rem;
+  margin-top: 2rem;
+
+  @media (min-width: 1024px) {
+    margin-top: 5rem;
+  }
 `;
 
 const StyledCard = styled.div`
   background: grey;
-  width: 20rem;
+  width: 100%;
+  max-width: 20rem;
   padding: 25px 20px;
   border: 4px solid #7cdacc;
   box-shadow: 0 6px 10px rgba(207, 212, 222, 1);
@@ -70,20 +75,31 @@ const StyledCard = styled.div`
   font-family: "Poppins", sans-serif;
   transition: all 0.3s ease;
 
+ 
   &:hover {
     transform: translateY(-10px);
   }
 
   .user-picture {
-  overflow:hidden;
-     position: relative;
-    overflow: hidden;
     width: 8rem;
     height: 8rem;
-    border: 2px solid #7cdacc;
-    border-radius: 50%;
     margin: auto;
+    border-radius: 50%;
+    border: 2px solid #7cdacc;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
+
+  @media (max-width: 768px) {
+    padding: 20px 15px;
+  }
+
+
 
   .name-client {
     margin: 20px 0 0;

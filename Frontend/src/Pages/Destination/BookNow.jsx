@@ -104,28 +104,30 @@ const BookNow = () => {
   return (
     <>
       <Navbar />
-      <div className="mybody">
-        <div className="container max-w-6xl mx-auto bg-white rounded-xl shadow-lg p-4 sm:p-6 flex flex-col md:flex-row">
-          {/* Left Section - Image and Trip Details */}
-          <div className="order-1 md:order-none w-full md:w-1/2 pr-0 md:pr-6 mb-6 md:mb-0 text-center">
+<div className="mybody bg-slate-100 min-h-screen flex items-center justify-center px-4 pt-16 sm:pt-8">
+  <div className="max-w-5xl w-full bg-white rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 flex flex-col lg:flex-row gap-6">
+          {/* Left Section */}
+          <div className="w-full lg:w-1/2 text-center">
             {image ? (
               <img
                 src={image}
                 alt={title}
-                className="w-full h-auto max-h-64 sm:max-h-72 md:max-h-80 object-cover rounded-xl mb-4"
+                className="w-full h-64 sm:h-72 md:h-80 object-cover rounded-xl mb-4"
               />
             ) : (
               <p className="text-red-500">Image not available</p>
             )}
-            <h2 className="text-2xl font-bold text-zinc-800">{title || "Trip Title"}</h2>
-            <p className="text-zinc-800 mt-2">{description || "Trip description not available."}</p>
-            <p className="text-zinc-800 font-semibold mt-2">{price || "₹0"}</p>
-            <p className="text-zinc-800 font-semibold mt-2">5 days</p>
+            <h2 className="text-xl sm:text-2xl font-bold text-zinc-800">{title || "Trip Title"}</h2>
+            <p className="text-sm sm:text-base text-zinc-700 mt-2">
+              {description || "Trip description not available."}
+            </p>
+            <p className="text-lg font-semibold mt-2 text-zinc-800">{price || "₹0"}</p>
+            <p className="text-base text-zinc-600">Duration: 5 days</p>
           </div>
 
-          {/* Right Section - Booking Form */}
-          <div className="w-full md:w-1/2 md:pl-6">
-            <h3 className="text-zinc-800 text-2xl font-bold mb-4 text-center">
+          {/* Right Section */}
+          <div className="w-full lg:w-1/2">
+            <h3 className="text-xl sm:text-2xl text-zinc-800 font-bold mb-4 text-center">
               Complete Your Booking
             </h3>
             <form className="space-y-4" onSubmit={handleFormSubmit}>
@@ -134,7 +136,7 @@ const BookNow = () => {
                   type="text"
                   name="name"
                   placeholder="Your Name"
-                  className="w-full p-2 rounded bg-white/80 text-black border"
+                  className="w-full p-3 rounded bg-white/90 text-black border border-gray-300"
                 />
                 {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
               </div>
@@ -144,9 +146,9 @@ const BookNow = () => {
                   type="number"
                   name="people"
                   placeholder="Total Number of People"
-                  className="w-full p-2 rounded bg-white/80 text-black border"
                   defaultValue={passengers || ""}
                   onChange={handlePeopleChange}
+                  className="w-full p-3 rounded bg-white/90 text-black border border-gray-300"
                 />
                 {errors.people && <p className="text-red-500 text-sm">{errors.people}</p>}
               </div>
@@ -156,7 +158,7 @@ const BookNow = () => {
                   type="email"
                   name="email"
                   placeholder="Your Email"
-                  className="w-full p-2 rounded bg-white/80 text-black border"
+                  className="w-full p-3 rounded bg-white/90 text-black border border-gray-300"
                 />
                 {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
               </div>
@@ -166,7 +168,7 @@ const BookNow = () => {
                   type="text"
                   name="phone"
                   placeholder="Your Phone Number"
-                  className="w-full p-2 rounded bg-white/80 text-black border"
+                  className="w-full p-3 rounded bg-white/90 text-black border border-gray-300"
                 />
                 {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
               </div>
@@ -176,18 +178,18 @@ const BookNow = () => {
                   type="date"
                   name="date"
                   defaultValue={tripDate || today}
-                  className="w-full p-2 rounded bg-white/80 text-black border"
+                  className="w-full p-3 rounded bg-white/90 text-black border border-gray-300"
                 />
                 {errors.date && <p className="text-red-500 text-sm">{errors.date}</p>}
               </div>
 
-              <div className="mt-4 text-center">
-                <p className="text-xl font-bold text-black">Total: ₹{total}</p>
+              <div className="text-center mt-4">
+                <p className="text-lg sm:text-xl font-bold text-black">Total: ₹{total}</p>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-cyan-400 text-white py-2 rounded hover:bg-cyan-600 flex justify-center items-center"
+                className="w-full bg-cyan-500 text-white text-center py-3 rounded hover:bg-cyan-600 transition-colors duration-300 flex justify-center items-center"
               >
                 Confirm Booking
               </button>

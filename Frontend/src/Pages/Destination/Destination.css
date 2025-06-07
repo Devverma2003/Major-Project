@@ -43,17 +43,18 @@ height: 80vh;
 
 }
 
-.section4{
-  /* background-image: url('bg.jpg') ; */
-  background-size: contain;
+.section4 {
+  background:#f9faff;
+  background-size: cover;
   background-position: center;
-  height: 80vh;
-  mix-blend-mode: color;
+  min-height: 60vh; /* better than fixed 80vh */
   display: flex;
-  justify-self: center;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  opacity: 0.8;  
-  
-} 
+  padding: 2rem 1rem;
+  position: relative;
+  z-index: 1;
+}
+

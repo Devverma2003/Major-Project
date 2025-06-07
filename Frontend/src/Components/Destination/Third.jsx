@@ -32,7 +32,7 @@ const StatCard = ({ value, label, dotPos, position }) => (
 
 const StatsSection = () => {
   return (
-    <div className="section3 relative z-10 flex flex-wrap justify-center lg:justify-start items-center gap-4 sm:gap-6 md:gap-8 px-4 sm:px-6 py-10 sm:py-14 lg:py-20 bg-[#F9F9FB] font-semibold text-center lg:text-left">
+    <div className="section3 relative z-10 flex flex-wrap justify-center lg:justify-start items-center gap-4 sm:gap-6 md:gap-8 px-4 sm:px-6 py-10 sm:py-14 lg:py-20 bg-[#F9F9FB] font-semibold text-center lg:text-left mb-32">
       {stats.map((stat, index) => (
         <StatCard
           key={index}
