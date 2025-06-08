@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import Navbar from "../Components/Navbar/Navbar";
 import Footer from "../Components/Footer";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import './Contact.css';
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -15,7 +18,6 @@ const Contact = () => {
 
   const defaultImage = "man3.avif";
 
-  // Handle input change for all fields
   const handleChange = (e) => {
     setFormData((prev) => ({
       ...prev,
@@ -23,7 +25,6 @@ const Contact = () => {
     }));
   };
 
-  // Validate inputs, returns an object of errors
   const validate = () => {
     const newErrors = {};
     if (!formData.name.trim()) newErrors.name = "Name is required.";
@@ -34,18 +35,17 @@ const Contact = () => {
     return newErrors;
   };
 
-  // Handle form submit
   const handleSubmit = (e) => {
     e.preventDefault();
     const validationErrors = validate();
     setErrors(validationErrors);
 
-    if (Object.keys(validationErrors).length === 0) {
-      setSubmitted(true);
-      alert("Message sent successfully!");
-      setFormData({ name: "", email: "", subject: "", message: "" });
-      setErrors({});
-    }
+   if (Object.keys(validationErrors).length === 0) {
+  setSubmitted(true);
+  toast.success("Message sent successfully!");
+  setFormData({ name: "", email: "", subject: "", message: "" });
+  setErrors({});
+}
   };
 
   return (
@@ -149,6 +149,7 @@ const Contact = () => {
         </div>
       </div>
       <Footer />
+      <ToastContainer position="top-right" autoClose={3000} />
     </>
   );
 };
