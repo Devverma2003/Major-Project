@@ -6,7 +6,7 @@ body {
 }
 
 .bg {
-  background-image: url('loo.jpg'); /* Make sure the path is correct */
+  background-image: url('/loo.jpg'); /* Make sure the path is correct */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: left;
