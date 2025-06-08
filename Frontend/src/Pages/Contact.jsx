@@ -15,7 +15,6 @@ const Contact = () => {
 
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
-
   const defaultImage = "man3.avif";
 
   const handleChange = (e) => {
@@ -40,19 +39,19 @@ const Contact = () => {
     const validationErrors = validate();
     setErrors(validationErrors);
 
-   if (Object.keys(validationErrors).length === 0) {
-  setSubmitted(true);
-  toast.success("Message sent successfully!");
-  setFormData({ name: "", email: "", subject: "", message: "" });
-  setErrors({});
-}
+    if (Object.keys(validationErrors).length === 0) {
+      setSubmitted(true);
+      toast.success("Message sent successfully!");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+      setErrors({});
+    }
   };
 
   return (
     <>
       <Navbar />
-      <div className="contact-background py-10 px-6 bg-gray-100 min-h-screen flex items-center justify-center">
-        <div className="container mx-auto max-w-6xl bg-white rounded-xl shadow-lg p-6 flex flex-col lg:flex-row gap-8">
+      <div className="contact-background">
+        <div className="container mx-auto max-w-6xl bg-white rounded-xl shadow-lg p-6 flex flex-col lg:flex-row gap-8 mt-6">
           {/* Left Side - Image & Info */}
           <div className="lg:w-1/2 flex flex-col items-center text-center px-4">
             <img
