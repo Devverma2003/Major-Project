@@ -5,7 +5,7 @@
 }
 
 .wrapper {
-  background-image: url('b00.jpg') !important;
+  background-image: url('/b00.jpg') !important;
   background-size:cover;
   background-position: center;
   background-repeat: no-repeat;

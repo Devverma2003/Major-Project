@@ -1,5 +1,5 @@
 .contact-background {
-  background-image: url('man2.avif'); /* Place this image in public folder */
+  background-image: url('/man2.avif'); /* Place this image in public folder */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

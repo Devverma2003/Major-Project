@@ -6,7 +6,7 @@ body{
   
 }
 .section1{
-  background-image: url('bg.jpg') ;
+  background-image: url('/bg.jpg') ;
   background-size: contain;
   background-position: center;
   height: 60vh;
@@ -20,7 +20,7 @@ body{
 } 
  
 .section2{
-background-image: url('bg4.jpg');
+background-image: url('/bg4.jpg');
 background-size: cover;
 background-repeat: no-repeat;
 background-position: center;
@@ -33,7 +33,7 @@ flex-direction: column;
 width: 100%;
 }
 .section3 {
-background-image: url('bg3.jpg');
+background-image: url('/bg3.jpg');
 background-size: cover;
 background-repeat: no-repeat;
 background-position: center;
