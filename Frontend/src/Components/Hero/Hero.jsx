@@ -78,59 +78,52 @@ const Hero = () => {
 
         {/* Form */}
         <div className="w-full max-w-6xl mt-10 sm:mt-20 lg:mt-80 px-4 mx-auto">
-          <form
-            onSubmit={handleSubmit}
-            className="form flex flex-wrap sm:flex-nowrap items-center justify-between border-4 rounded-xl gap-4 bg-white p-4"
-          >
-            <input
-              type="text"
-              placeholder="From"
-              value={from}
-              onChange={(e) => setFrom(e.target.value)}
-              className="flex-1 min-w-[160px] border-2 text-xl text-center border-gray-200 p-2 rounded-lg text-black placeholder-black"
-            />
+        <form
+  onSubmit={handleSubmit}
+  className="form flex flex-col md:flex-row md:flex-wrap items-center justify-center border-4 rounded-xl gap-4 bg-white p-4"
+>
+  <input
+    type="text"
+    placeholder="From"
+    value={from}
+    onChange={(e) => setFrom(e.target.value)}
+    className="w-full md:flex-1 border-2 text-lg text-center border-gray-200 p-2 rounded-lg text-black placeholder-black"
+  />
+  <input
+    type="text"
+    placeholder="To"
+    value={to}
+    onChange={(e) => setTo(e.target.value)}
+    className="w-full md:flex-1 border-2 text-lg text-center border-gray-200 p-2 rounded-lg text-black placeholder-black"
+  />
+  <input
+    type="number"
+    placeholder="Passengers"
+    value={passengers}
+    onChange={(e) => setPassengers(e.target.value)}
+    className="w-full md:flex-1 border-2 text-lg text-center border-gray-200 p-2 rounded-lg text-black placeholder-black"
+  />
+  <input
+    type="date"
+    value={date}
+    onChange={(e) => setDate(e.target.value)}
+    className="w-full md:flex-1 border-2 text-lg text-center border-gray-200 p-2 rounded-lg text-black placeholder-black"
+  />
+  <button
+    type="submit"
+    className="w-full md:w-auto text-white font-semibold px-6 py-2 rounded-full shadow transition-all duration-300 flex items-center justify-center frmbtn"
+  >
+    Search
+    <svg className="w-5 h-6 ml-2" viewBox="0 0 24 24" fill="currentColor">
+      <path
+        fillRule="evenodd"
+        d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+        clipRule="evenodd"
+      />
+    </svg>
+  </button>
+</form>
 
-            <input
-              type="text"
-              placeholder="To"
-              value={to}
-              onChange={(e) => setTo(e.target.value)}
-              className="flex-1 min-w-[160px] border-2 text-xl text-center border-gray-200 p-2 rounded-lg text-black placeholder-black"
-            />
-
-            <input
-              type="number"
-              placeholder="Passengers"
-              value={passengers}
-              onChange={(e) => setPassengers(e.target.value)}
-              className="flex-1 min-w-[160px] border-2 text-xl text-center border-gray-200 p-2 rounded-lg text-black placeholder-black"
-            />
-
-            <input
-              type="date"
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-              className="flex-1 min-w-[160px] border-2 text-xl text-center border-gray-200 p-2 rounded-lg text-black"
-            />
-
-            <button
-              type="submit"
-              className="w-full sm:w-auto flex-shrink-0 frmbtn text-white font-semibold px-6 py-2 rounded-full shadow transition-all duration-300 flex items-center justify-center"
-            >
-              Search
-              <svg
-                className="w-5 h-6 ml-2"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </button>
-          </form>
         </div>
       </div>
     </div>
